@@ -7,16 +7,9 @@ on:
       - synchronize
       - labeled
       - unlabeled
-  pull_request:
-    types:
-      - opened
-      - edited
-      - synchronize
-      - labeled
-      - unlabeled
 
 jobs:
-  check:
+  check-target:
     runs-on: ubuntu-latest
     steps:
       - uses: thehanimo/pr-title-checker@v1.3.1
