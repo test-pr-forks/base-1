@@ -12,6 +12,6 @@
   "MESSAGES": {
     "success": "All OK",
     "failure": "Failing CI test",
-    "notice": ""
+    "notice": "Warning: This is a notice"
   }
 }
