@@ -10,7 +10,7 @@ on:
 
 jobs:
   titleCheck:
-    runs-on: [ self-hosted ]
+    runs-on: ubuntu-latest
     steps:
       - id: title_check
         name: check pr title for keyword
@@ -20,7 +20,7 @@ jobs:
           pass_on_octokit_error: false
           configuration_path: ".github/pr-title.json"
   labelCheck:
-    runs-on: [ self-hosted ]
+    runs-on: ubuntu-latest
     needs: [ titleCheck ]
 #    this check not working
 #     if: needs.steps.title_check.result == 'y'
