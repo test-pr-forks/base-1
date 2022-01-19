@@ -26,4 +26,4 @@ jobs:
 #     if: needs.steps.title_check.result == 'y'
     steps:
       - name: check label
-        run: echo ${{ needs.steps.title_check }}
+        run: echo "${{ needs.steps.title_check }}"
