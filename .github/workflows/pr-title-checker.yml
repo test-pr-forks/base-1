@@ -26,4 +26,12 @@ jobs:
 #     if: needs.steps.title_check.result == 'y'
     steps:
       - name: check label
-        run: echo "$GITHUB_CONTEXT"
+        shell: bash
+        run: |
+          echo "GH_NEEDS: $GH_NEEDS"
+          echo "GH_STEPS: $GH_STEPS"
+          echo "GH_C: $GH_C"
+        env:
+          GH_NEEDS: ${{ toJSON(needs) }}
+          GH_STEPS: ${{ toJSON(steps) }}
+          GH_C: ${{ toJSON(github) }}
