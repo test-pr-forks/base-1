@@ -9,11 +9,21 @@ on:
       - unlabeled
 
 jobs:
-  check:
-    runs-on: ubuntu-latest
+  titleCheck:
+    runs-on: [ self-hosted ]
     steps:
-      - uses: thehanimo/pr-title-checker@v1.3.3
+      - id: title_check
+        name: check pr title for keyword
+        uses: thehanimo/pr-title-checker@v1.3.4
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           pass_on_octokit_error: false
-          configuration_path: ".github/pr-title-checker-config.json"
+          configuration_path: ".github/pr-title.json"
+  labelCheck:
+    runs-on: [ self-hosted ]
+    needs: [ titleCheck ]
+#    this check not working
+#     if: needs.steps.title_check.result == 'y'
+    steps:
+      - name: check label
+        run: echo needs.steps.title_check
