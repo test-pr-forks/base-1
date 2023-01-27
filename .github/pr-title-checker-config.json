@@ -1,11 +1,11 @@
 {
   "LABEL": {
-    "name": "a",
+    "name": "",
     "color": "EEEEEE"
   },
   "CHECKS": {
     "prefixes": ["fix: ", "feat: "],
-    "regexp": "(feat\\(.*\\))|(fix\\(.*\\)):"
+    "regexp": "(feat\\(.*\\))|(fix\\(.*\\)):",
     "regexpFlags": "i",
     "ignoreLabels" : ["dont-check-PRs-with-this-label", "meta"]
   },
