@@ -14,7 +14,7 @@ jobs:
     steps:
       - id: title_check
         name: check pr title for keyword
-        uses: thehanimo/pr-title-checker@main
+        uses: thehanimo/pr-title-checker@test
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           pass_on_octokit_error: false
