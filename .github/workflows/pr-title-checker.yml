@@ -14,7 +14,7 @@ jobs:
     steps:
       - id: title_check
         name: check pr title for keyword
-        uses: smzelek/pr-title-checker@main
+        uses: smzelek/pr-title-checker@dev
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           pass_on_octokit_error: false
